@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome <%= @newuser_name %> !! </h1>         
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <!--<th>SSN</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @newuser_name %></td>
+        <td><%= @user_pass %></td>
+        <!--<td><%= @ssn %></td>-->
+      </tr>
+    </tbody>
+  </table>
+  <span><%= link "Logout", to: Routes.session_path(@conn, :delete) %></span>
+</div>

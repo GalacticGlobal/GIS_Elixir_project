@@ -1,0 +1,4 @@
+<section class="row">
+ <%= link "Register", to: Routes.user_path(@conn, :new), class: "btn btn-primary" %>
+ <%= link "Login", to: Routes.session_path(@conn, :new), class: "btn right secondary-color" %>
+</section>

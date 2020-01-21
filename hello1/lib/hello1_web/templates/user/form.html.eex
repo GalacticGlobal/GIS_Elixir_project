@@ -1,0 +1,27 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+ <div class="form-group">
+   <label> Username :
+  <%= text_input f, :username, placeholder: "Username" ,class: "form-control",required: "true",pattern: "[a-zA-Z]+",autocomplete: "new-username" %>
+  <%= error_tag f, :username %>
+  </label>
+
+</div>
+ <div class="form-group">
+ 
+  <label> Password:
+  <%= password_input f, :password, placeholder: "Password" ,class: "form-control",required: "true",minlength: "6",autocomplete: "new-password" %>
+  <%= error_tag f, :password %>
+  </label>
+  <%= hidden_input f, :ssn, id: "location_x" , value: @ssnip %>
+  <div>
+    <%= submit "Submit", class: "btn right secondary-color" %>
+    <%= link "Back to Login", to: Routes.session_path(@conn, :new), class: "btn right secondary-color" %>
+  </div>
+  </div>
+<% end %>
+

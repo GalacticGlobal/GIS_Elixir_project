@@ -1,0 +1,29 @@
+<div class='row'>
+  <div class='col s12 m6 offset-m3'>
+    <div class='card'>
+      <div class='container'>
+        <span class='card-title'><h1>LOGIN</h1></span>
+          <%= form_for @conn, Routes.session_path(@conn, :new), [as: :session], fn f -> %>
+
+          <div class="form-group">
+             <label> Username :
+            <%= text_input f, :username, placeholder: "Username" ,class: "form-control",required: "true",pattern: "[a-zA-Z]+",autocomplete: "new-username" %>
+            <%= error_tag f, :username %>
+            </label>
+
+          </div>
+             <div class="form-group">
+ 
+              <label> Password:
+              <%= password_input f, :password, placeholder: "Password" ,class: "form-control",required: "true",minlength: "6",autocomplete: "new-password" %>
+              <%= error_tag f, :password %>
+              </label>
+              <div>
+
+            <%= submit "Submit", class: "btn right secondary-color" %>
+            <%= link "Go to Register", to: Routes.user_path(@conn, :new), class: "btn secondary-color" %>
+          <% end %>
+          </div>
+    </div>
+  </div>
+</div>
