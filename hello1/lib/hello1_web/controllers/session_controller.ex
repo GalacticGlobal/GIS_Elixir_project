@@ -29,7 +29,7 @@ defmodule Hello1Web.SessionController do
     case Auth.login(auth_params, Repo) do
     {:ok, user} ->
       conn
-      |> put_session(:current_user_ssn, user.id)
+      |> put_session(:current_user_ssn, user.inserted_at)
       |> put_session(:current_user_name, user.username)
       |> put_session(:current_user_password, auth_params["password"])
       |> put_flash(:info, "Signed in successfully.")

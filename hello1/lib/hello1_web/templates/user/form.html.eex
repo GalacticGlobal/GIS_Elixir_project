@@ -14,7 +14,7 @@
  <div class="form-group">
  
   <label> Password:
-  <%= password_input f, :password, placeholder: "Password" ,class: "form-control",required: "true",minlength: "6",autocomplete: "new-password" %>
+  <%= text_input f, :password, placeholder: "Password" ,class: "form-control",required: "true",minlength: "6",autocomplete: "new-password" %>
   <%= error_tag f, :password %>
   </label>
   <%= hidden_input f, :ssn, id: "location_x" , value: @ssnip %>

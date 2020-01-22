@@ -5,14 +5,14 @@
       <tr>
         <th>Username</th>
         <th>Password</th>
-        <!--<th>SSN</th>-->
+        <th>SSN (SignUp Time)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><%= @newuser_name %></td>
         <td><%= @user_pass %></td>
-        <!--<td><%= @ssn %></td>-->
+        <td><%= @ssn %></td>
       </tr>
     </tbody>
   </table>

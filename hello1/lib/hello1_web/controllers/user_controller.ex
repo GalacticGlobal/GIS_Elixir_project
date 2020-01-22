@@ -16,7 +16,7 @@ defmodule Hello1Web.UserController do
         conn
         |> put_session(:new_user_name, user.username)
         |> put_session(:new_user_password, user_params["password"])
-        |> put_session(:new_user_ssn, user_params["ssn"])
+        |> put_session(:new_user_ssn, user.inserted_at)
         |> put_flash(:info, "Signed up successfully.")
         |> redirect(to: Routes.session_path(conn, :registered))
       {:error, %Ecto.Changeset{} = changeset} ->
